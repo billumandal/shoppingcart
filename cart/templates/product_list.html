@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+	<h1>Product List</h1>
+
+	<ul>
+		{% for product in object_list %}
+			<li class="product">{{ product }}</li>
+		{% endfor %}
+	</ul>
+	<hr>
+	<a href="/admin">Go to the admin site</a>
+{% endblock %}

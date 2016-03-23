@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+	<h1>Transaction List</h1>
+
+	<ul>
+		{% for transaction in object_list %}
+			<li class="transaction">{{ transaction }}</li>
+		{% endfor %}
+	</ul>
+	<hr>
+	<a href="/admin">Go to the admin site</a>
+{% endblock %}
