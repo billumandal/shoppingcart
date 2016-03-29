@@ -6,10 +6,12 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 	<style type='text/css'>{% block css %}{% endblock %}</style>
 </head>
-<body>{% block body %}
+<body>
+	{% block body %}
 	{% block content %}{% endblock %}
 	{% block footer %}
 		<hr>
+		<a href="/admin">Go to the admin site</a>
 		<p>Thanks for visiting my site.</p>
 	{% endblock %}
 {% endblock %}{% endspaceless %}

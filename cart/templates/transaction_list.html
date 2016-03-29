@@ -2,6 +2,14 @@
 {% load staticfiles %}
 
 {% block content %}
+	<div>
+		{{ user }}
+		{% if user.is_anonymous %}
+			<a href="{% url 'django.contrib.auth.views.login %}">login</a>
+		{% else %}
+			<a href="{% url 'django.contrib.auth.views.logout %}">logout</a>
+		{% endif %}
+	</div>
 	<h1>Transaction List</h1>
 
 	<ul>
@@ -9,6 +17,4 @@
 			<li class="transaction">{{ transaction }}</li>
 		{% endfor %}
 	</ul>
-	<hr>
-	<a href="/admin">Go to the admin site</a>
 {% endblock %}

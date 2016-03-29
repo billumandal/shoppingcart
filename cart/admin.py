@@ -18,8 +18,8 @@ class UserProfileAdmin(admin.ModelAdmin):
 
 class ProductAdmin(admin.ModelAdmin):
 	list_display = ('product_name', 'price')
-	fields = ('product_name', 'sellerid', 'price', 'selling_started_on') 
-	list_filter = ('selling_started_on',)
+	fields = ('product_name', 'sellerid', 'price', 'selling_starts_on', 'image') 
+	list_filter = ('selling_starts_on',)
 
 class TransactionAdmin(admin.ModelAdmin):
 	fields = ('time', 'sellerid', 'buyerid', 'product_name', 'quantity', 'image')

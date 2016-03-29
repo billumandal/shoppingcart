@@ -32,8 +32,8 @@ class Product(models.Model):
 	product_name = models.CharField(max_length=100)
 	sellerid = models.ManyToManyField(User)
 	price = models.IntegerField()
-	image = models.ImageField(upload_to='photos/%Y/%m/%d', blank=True)
-	selling_started_on = models.DateField(null=True)
+	image = models.ImageField(upload_to='product_pictures/%Y/%m/%d', blank=True)
+	selling_starts_on = models.DateField(null=True)
 	selling_ends_on = models.DateField(null=True)
 	despatched_from = models.CharField(max_length=50)
 
@@ -59,3 +59,15 @@ class Transaction(models.Model):
 		return "Transaction ID is {}".format(self.id)
 		return "The transaction was for {} {} done on {}.".format(self.quantity, self.product, self.time)
 		return "The buyer was {} and the seller was {}.".format(self.buyer, self.seller)
+
+from django.contrib.sitemaps import ping_google
+class Entry(models.Model):
+	# This is ping google class. This is here to ping google whenever we change sitemap so that google spider reindexes our site. I've put it here just to remember to do this whenever I build a site. Found this in djangobook page 143
+
+	def save(self):
+		super(Entry, self).save()
+		try:
+			ping_google()
+		except Exception:
+			# Bare 'except' because we could get a variety of HTTP-related exceptions
+			pass

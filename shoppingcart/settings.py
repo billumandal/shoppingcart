@@ -121,8 +121,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = '/home/media'
+MEDIA_ROOT = ''
 
 STATICFILES_DIRS = (
         os.path.join( os.path.dirname(__file__), 'static'),
     )
+
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL ='django.contrib.auth.views.login'
