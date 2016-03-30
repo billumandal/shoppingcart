@@ -24,6 +24,8 @@ urlpatterns = [
     url(r'^productlist/$', ListProductView.as_view(), name='productlist'),
     url(r'^admin/', admin.site.urls),
     url(r'^transactionlist/$', ListTransactionView.as_view(), name='transactionlist'),
+    url(r'^login/$', 'django.contrib.auth.views.login'),
+    url(r'^logout/$', 'django.contrib.auth.views.logout'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
