@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import ListView
+from django.views.generic.edit import FormMixin, ProcessFormView
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator 
 from cart.models import Transaction, Product
+from cart.forms import ProductForm
 
 def home(request):
 	return render(request, 'index.html')
@@ -32,3 +34,17 @@ class ListProductView(ListView):
 
 	model = Product
 	template_name = 'product_list.html'
+
+def AddProduct(request):
+	query = request.GET.get('q', '')
+	if query:
+		qset = (
+			
+			)
+
+# class AddProductView(FormMixin, ProcessFormView):
+# 	form_class = ProductForm
+# 	success_url = '/productlist/'
+
+	# def form_valid(self, form):
+	# 	form.save()

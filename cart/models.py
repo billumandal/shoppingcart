@@ -60,6 +60,9 @@ class Transaction(models.Model):
 		return "The transaction was for {} {} done on {}.".format(self.quantity, self.product, self.time)
 		return "The buyer was {} and the seller was {}.".format(self.buyer, self.seller)
 
+	class Meta:
+		ordering = ["-date"]
+
 from django.contrib.sitemaps import ping_google
 class Entry(models.Model):
 	# This is ping google class. This is here to ping google whenever we change sitemap so that google spider reindexes our site. I've put it here just to remember to do this whenever I build a site. Found this in djangobook page 143

@@ -113,19 +113,22 @@ USE_I18N = True
 
 USE_L10N = True
 
+USE_THOUSAND_SEPARATOR = True #I added it myself
+
 USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/' 
 
-MEDIA_ROOT = ''
+MEDIA_ROOT = '' #I added it myself
 
 STATICFILES_DIRS = (
         os.path.join( os.path.dirname(__file__), 'static'),
-    )
+    ) #I added it myself
 
-LOGIN_REDIRECT_URL = '/'
-LOGIN_URL ='django.contrib.auth.views.login'
+LOGIN_REDIRECT_URL = '/' #I added it myself
+
+LOGIN_URL ='django.contrib.auth.views.login' #I added it myself
