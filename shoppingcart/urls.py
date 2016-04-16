@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-# from cart import views
+from cart import views
 from cart.views import home, ListProductView, ListTransactionView
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 

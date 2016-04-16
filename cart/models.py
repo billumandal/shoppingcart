@@ -61,7 +61,7 @@ class Transaction(models.Model):
 		return "The buyer was {} and the seller was {}.".format(self.buyer, self.seller)
 
 	class Meta:
-		ordering = ["-date"]
+		ordering = ["-time"]
 
 from django.contrib.sitemaps import ping_google
 class Entry(models.Model):

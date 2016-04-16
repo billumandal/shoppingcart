@@ -8,12 +8,12 @@ class ProductForm(forms.Form):
 	class Meta:
 		model = Product
 
-	productname = form.CharField(label=_("Name of the Proudct"), max_lenght=255, widget=forms.TextInput,)
-	price = forms.PositiveIntegerField(label=_("Price of the item: Rs."))
-	selling_starts_on = forms.DateField(label=_("Selling Starts On"))
-	selling_ends_on = forms.DateField(label=_("Selling Ends On"))
-	despatched_from = forms.CharField(label=_("Item despatched from"), max_lenght=30)
-	image = forms.ImageField(label=_("Optionally Add an Image of the Product"))
+	productname = forms.CharField(label="Name of the Proudct", max_length=255, widget=forms.TextInput,)
+	price = forms.IntegerField(label="Price of the item: Rs.")
+	selling_starts_on = forms.DateField(label="Selling Starts On")
+	selling_ends_on = forms.DateField(label="Selling Ends On")
+	despatched_from = forms.CharField(label="Item despatched from", max_length=30)
+	image = forms.ImageField(label="Optionally Add an Image of the Product")
 
 	error_css_class = 'error'
 	required_css_clss = 'required'
