@@ -18,14 +18,17 @@ from django.contrib import admin
 from cart import views
 from cart.views import home, ListProductView, ListTransactionView
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.contrib.auth.views import login, logout
 
 urlpatterns = [ 
     url(r'^$/', views.home, name='home'),
     url(r'^admin/', admin.site.urls),
     url(r'^productlist/$', ListProductView.as_view(), name='productlist'),
     url(r'^transactionlist/$', ListTransactionView.as_view(), name='transactionlist'),
-    url(r'^login/$', 'django.contrib.auth.views.login', name='login'),
-    url(r'^logout/$', 'django.contrib.auth.views.logout', name='logout'),
+    # url(r'^login/$', 'django.contrib.auth.views.login', name='login'),
+    # url(r'^logout/$', 'django.contrib.auth.views.logout', name='logout'),
+    url(r'^login/$', login, name='login'),
+    url(r'^login/$', logout, name='logout'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
