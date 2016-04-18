@@ -35,16 +35,28 @@ class ListProductView(ListView):
 	model = Product
 	template_name = 'product_list.html'
 
-def AddProduct(request):
-	query = request.GET.get('q', '')
-	if query:
-		qset = (
+# def AddProductView(request):
+# 	query = request.GET.get('q', '')
+# 	if query:
+# 		qset = (
 			
-			)
+# 			)
 
 # class AddProductView(FormMixin, ProcessFormView):
 # 	form_class = ProductForm
 # 	success_url = '/productlist/'
 
-	# def form_valid(self, form):
-	# 	form.save()
+# 	def form_valid(self, form):
+# 		form.save()
+# 		return HttpResponseRedirect('/productlist/')
+
+def AddProductView(request):
+	if request.method == 'POST':
+		form = ProductForm(request.POST)
+		if form.is_valid():
+			cd = form.cleaned_data
+			form.save()
+			return HttpResponseRedirect('/productlist/')
+	else:
+		form = ProductForm()
+	return render(request, 'add_product.html', {'form': form})

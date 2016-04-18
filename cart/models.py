@@ -57,7 +57,7 @@ class Transaction(models.Model):
 
 	def __unicode__(self):
 		return "Transaction ID is {}".format(self.id)
-		return "The transaction was for {} {} done on {}.".format(self.quantity, self.product, self.time)
+		return "The transaction was for {} {}s done on {}.".format(self.quantity, self.product, self.time)
 		return "The buyer was {} and the seller was {}.".format(self.buyer, self.seller)
 
 	class Meta:

@@ -2,9 +2,11 @@
 <!DOCTYPE html>
 <head>
 	{% spaceless %}
+	{% block head %}{% endblock %}
 	<title>{% block title %}Shopping Cart by Billu{% endblock %}</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 	<style type='text/css'>{% block css %}{% endblock %}</style>
+	<script type="text/javascript">{% block javascript %}{% endblock %}</script>
 </head>
 <body>
 	{% block body %}

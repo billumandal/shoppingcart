@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+<script src="{% static 'js/jquery-2.2.3.js' %}"></script>
+<script src="{% static 'jquery-1.10.2.js' %}"></script>
+<script src="{% static 'jquery-ui.js' %}"></script>
+{% endblock %}
+{% block css %}
+	ur.errorlist{
+		margin: 0;
+		padding: 0;
+	}
+	.errorlist li{
+		background-color: red;
+		color: white;
+		display: block;
+		font-size: 10px;
+		margin: 0 0 3px;
+		padding: 4px 5px;
+	}
+{% endblock %}
+{% block javascript %}
+	$(function(){
+		$('#id_selling_starts_on').datepicker();
+		$('#id_ends_starts_on').datepicker();
+	});
+{% endblock %}
+{% block body %}
+	<h1>Add Product</h1>
+	{% block content %}
+	<form action="" method="post">
+		{% csrf_token %}
+		{% for field in form %}
+			{{ field.label_tag }} : {{ field }}
+			{{ field.errors }}
+			<br><br>
+		{% endfor %}
+		{{ form.non_field_errors }}
+		<input type="submit" value="Add Product">
+	</form>
+	{% endblock %}
+{% endblock %}
