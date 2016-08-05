@@ -21,7 +21,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib.auth.views import login, logout
 
 urlpatterns = [ 
-    url(r'^$/', views.home, name='home'),
+    url(r'^$', views.home, name='home'),
     url(r'^admin/', admin.site.urls),
     url(r'^productlist/$', ListProductView.as_view(), name='productlist'),
     url(r'^transactionlist/$', ListTransactionView.as_view(), name='transactionlist'),
