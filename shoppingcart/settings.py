@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cart',
+    'register_activate',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -53,10 +54,11 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'shoppingcart.urls'
 
+register_activate_dir=os.path.dirname(os.path.abspath('register_activate.__file__'))
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(register_activate_dir,'register_activate/templates/register_activate')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -132,3 +134,22 @@ STATICFILES_DIRS = (
 LOGIN_REDIRECT_URL = '/' #I added it myself
 
 LOGIN_URL ='django.contrib.auth.views.login' #I added it myself
+
+# from .email_info import *
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'mail.tlabsonline.com'
+# EMAIL_PORT = 25 # it was 587 for gmail only I think, can't be sure
+# EMAIL_HOST_USER = 'billum@tlabsonline.com'
+# EMAIL_HOST_PASSWORD = 'billum123'
+# EMAIL_USE_TLS = False
+# DEFAULT_FROM_EMAIL = 'jon.peetarson@gmail.com'
+# ACCOUNT_ACTIVATION_DAYS = 2
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, '/emails')
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1030
+EMAIL_HOST_USER = None
+EMAIL_HOST_PASSWORD = None
+
+AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend', 'register_activate.email_auth.EmailBackend',] # (,) # the brackets came automatically

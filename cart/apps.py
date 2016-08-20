@@ -5,3 +5,6 @@ from django.apps import AppConfig
 
 class CartConfig(AppConfig):
     name = 'cart'
+
+class AuthConfig(AppConfig):
+    name = 'register_activate'

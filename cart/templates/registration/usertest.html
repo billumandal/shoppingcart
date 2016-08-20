@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% block title %}User test{% endblock %}
+
     {% block header %}
         <div id="header">
             <a href="{% url 'home' %}">User Testing for Django-registration</a> | 
             {% if user.is_authenticated %}
-            Logged in: <strong>{{ user.username }}</strong>
-            <br/> 
+            Logged in: {{ user.username }} 
             (<a href="{% url 'auth_logout' %}">Log out</a> | 
-            <a href="{% url 'auth_password_change' %}">Change password</a>)
+            <a href="{% url 'auth_password_change' %}">Change password/a>)
             {% else %}
             <a href="{% url 'auth_login' %}">Log in</a>
             {% endif %}
@@ -15,8 +16,8 @@
         </div>
     {% endblock %}
 
-{% block title %}Home of {{block.super}}{% endblock %}
-{% block content %}
-	<!-- Click <a href="/quiz">here</a> here to go to Technnovation Labs's Quiz -->
-    <h1>This is the index page</h1>
-{% endblock %}
+    {% block content %}
+        <div id="content">
+            <h1>This file is in the /templates/registration folder.</h1>
+        </div>
+    {% endblock %}

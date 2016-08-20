@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <head>
 	{% spaceless %}
-	{% block head %}{% endblock %}
+	{% block header %}{% endblock %}
 	<title>{% block title %}Shopping Cart by Billu{% endblock %}</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 	<style type='text/css'>{% block css %}{% endblock %}</style>
@@ -12,9 +12,12 @@
 	{% block body %}
 	{% block content %}{% endblock %}
 	{% block footer %}
+	<div id="footer">
 		<hr>
 		<a href="/admin">Go to the admin site</a>
 		<p>Thanks for visiting my site.</p>
+		<p>&copy; 2016</p>
+	</div>
 	{% endblock %}
 {% endblock %}{% endspaceless %}
 </body>
