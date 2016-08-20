@@ -1,6 +1,5 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from . import views
-from django.conf.urls import patterns,include,url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns 
 app_name='register_activate'
 urlpatterns = [
