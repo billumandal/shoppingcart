@@ -6,10 +6,10 @@
             {% if user.is_authenticated %}
             Logged in: <strong>{{ user.username }}</strong>
             <br/> 
-            (<a href="{% url 'auth_logout' %}">Log out</a> | 
+            (<a href="{% url 'logout' %}">Log out</a> | 
             <a href="{% url 'auth_password_change' %}">Change password</a>)
             {% else %}
-            <a href="{% url 'auth_login' %}">Log in</a>
+            <a href="{% url 'signin' %}">Log in</a>
             {% endif %}
             <hr />
         </div>

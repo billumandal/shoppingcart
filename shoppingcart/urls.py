@@ -22,13 +22,13 @@ from django.contrib.auth import urls, views
 from django.views.generic import TemplateView
 
 urlpatterns = [ 
-    # url(r'^$', cart.views.home, name='home'),
+    url(r'^$', views.home, name='home'),
     url(r'^admin/', admin.site.urls),
     url(r'^register_activate/', include('register_activate.urls')),
     url(r'^productlist/$', ListProductView.as_view(), name='productlist'),
     url(r'^transactionlist/$', ListTransactionView.as_view(), name='transactionlist'),
-    url(r'^$', TemplateView.as_view(template_name='index.html' ), name='home'),
-    url(r'^usertest/$', TemplateView.as_view(template_name='./registration/usertest.html' ), name='usertest'),
+    # url(r'^$', TemplateView.as_view(template_name='index.html' ), name='home'),
+    # url(r'^usertest/$', TemplateView.as_view(template_name='./registration/usertest.html' ), name='usertest'),
     
 ]
 

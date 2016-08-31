@@ -1,5 +1,6 @@
 from django.conf.urls import url, include
 from . import views
+import cart
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns 
 app_name='register_activate'
 urlpatterns = [
