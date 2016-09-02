@@ -104,5 +104,3 @@ def send_email(toaddr,id):
 	server.login(username,password)
 	server.sendmail(fromaddr,[toaddr],msg)
 	server.quit()
-
-	

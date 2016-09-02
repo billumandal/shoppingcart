@@ -25,7 +25,7 @@ from django.http import HttpResponseRedirect
 urlpatterns = [ 
     # url(r'^$', home, name='home'),
     # url(r'^$', lambda r: HttpResponseRedirect('index')),
-    url(r'^$', TemplateView.as_view(template_name='index.html' ), name='home'),
+    # url(r'^$', TemplateView.as_view(template_name='index.html' ), name='home'),
     url(r'^admin/', admin.site.urls),
     url(r'^productlist/$', ListProductView.as_view(), name='productlist'),
     url(r'^transactionlist/$', ListTransactionView.as_view(), name='transactionlist'),

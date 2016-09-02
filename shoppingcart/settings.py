@@ -125,7 +125,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/' 
 
-MEDIA_ROOT = '' #I added it myself
+MEDIA_ROOT = 'media/' #I added it myself
 
 STATICFILES_DIRS = (
         os.path.join( os.path.dirname(__file__), 'static'),
@@ -134,16 +134,6 @@ STATICFILES_DIRS = (
 LOGIN_REDIRECT_URL = '/' #I added it myself
 
 LOGIN_URL ='django.contrib.auth.views.login' #I added it myself
-
-# from .email_info import *
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'mail.tlabsonline.com'
-# EMAIL_PORT = 25 # it was 587 for gmail only I think, can't be sure
-# EMAIL_HOST_USER = 'billum@tlabsonline.com'
-# EMAIL_HOST_PASSWORD = 'billum123'
-# EMAIL_USE_TLS = False
-# DEFAULT_FROM_EMAIL = 'jon.peetarson@gmail.com'
-# ACCOUNT_ACTIVATION_DAYS = 2
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, '/emails')
