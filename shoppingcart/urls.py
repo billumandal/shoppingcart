@@ -31,7 +31,7 @@ urlpatterns = [
     url(r'^transactionlist/$', ListTransactionView.as_view(), name='transactionlist'),
     url(r'^usertest/$', TemplateView.as_view(template_name='./registration/usertest.html' ), name='usertest'),
     url(r'^register_activate/', include('register_activate.urls')),
-    url(r'^uploadimage/', include('multiuploader.urls')),
+    url(r'^dragimage/', include('dragimage.urls', namespace='dragimage', app_name='dragimage')),
     
 ]
 

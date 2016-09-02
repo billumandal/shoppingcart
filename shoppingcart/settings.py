@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cart',
     'register_activate',
+    'dragimage',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -125,7 +126,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/' 
 
-MEDIA_ROOT = 'media/' #I added it myself
+MEDIA_ROOT = '/' #I added it myself
 
 STATICFILES_DIRS = (
         os.path.join( os.path.dirname(__file__), 'static'),
