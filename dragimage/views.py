@@ -7,7 +7,7 @@ from forms import UploadFileForm
 from models import UploadFile
 
 def home(request):
-    if request.method = POST
+    if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
             new_file = UploadFile(file = request.FILES['file'])
@@ -18,4 +18,4 @@ def home(request):
         form = UploadFileForm()
 
     data = {'form': form}
-    return render_to_response('dragimage/index.html', data, context_instance=RequestContext(request))
+    return render_to_response('dragimageindex.html', data, context_instance=RequestContext(request))
