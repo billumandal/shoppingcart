@@ -32,6 +32,7 @@
                 // You might want to show the submit button only when files are dropped here:
                 this.on("addedfile", function() {
                     // Show submit button here and/or inform user to click it.
+                    document.getElementByID('submit-all').style.background-color = 'red';
                 });
             }
         };
