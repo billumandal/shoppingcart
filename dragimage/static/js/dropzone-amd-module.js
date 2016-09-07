@@ -126,15 +126,15 @@
     Dropzone.prototype.events = ["drop", "dragstart", "dragend", "dragenter", "dragover", "dragleave", "addedfile", "addedfiles", "removedfile", "thumbnail", "error", "errormultiple", "processing", "processingmultiple", "uploadprogress", "totaluploadprogress", "sending", "sendingmultiple", "success", "successmultiple", "canceled", "canceledmultiple", "complete", "completemultiple", "reset", "maxfilesexceeded", "maxfilesreached", "queuecomplete"];
 
     Dropzone.prototype.defaultOptions = {
-      url: null,
+      url: '127.0.0.1:8000/dragimage', // was null
       method: "post",
       withCredentials: false,
       parallelUploads: 2,
-      uploadMultiple: false,
-      maxFilesize: 256,
+      uploadMultiple: true, // was false
+      maxFilesize: 256*4*2, // was only 256
       paramName: "file",
       createImageThumbnails: true,
-      maxThumbnailFilesize: 10,
+      maxThumbnailFilesize: 20,
       thumbnailWidth: 120,
       thumbnailHeight: 120,
       filesizeBase: 1000,
@@ -161,7 +161,7 @@
       dictCancelUploadConfirmation: "Are you sure you want to cancel this upload?",
       dictRemoveFile: "Remove file",
       dictRemoveFileConfirmation: null,
-      dictMaxFilesExceeded: "You can not upload any more files.",
+      dictMaxFilesExceeded: "You can only upload {{maxFiles}} files", //You can not upload any more files.
       accept: function(file, done) {
         return done();
       },

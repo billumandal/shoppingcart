@@ -1,1 +1,8 @@
 django-registration
+
+
+
+
+
+
+sqlite3

@@ -18,4 +18,4 @@ def home(request):
         form = UploadFileForm()
 
     data = {'form': form}
-    return render('dragimageindex.html', data, context_instance=RequestContext(request))
+    return render_to_response('dragimageindex.html', data, context_instance=RequestContext(request))
