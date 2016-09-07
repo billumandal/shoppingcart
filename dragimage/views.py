@@ -13,7 +13,9 @@ def home(request):
             new_file = UploadFile(file = request.FILES['file'])
             new_file.save()
 
-            return HttpResponseRedirect(reverse('dragimage:home'))
+            # return HttpResponseRedirect(reverse('dragimage:home'))
+            return HttpResponse('Image uploaded')
+# http://stackoverflow.com/questions/30077990/trying-to-use-django-and-dropzone
     else:
         form = UploadFileForm()
 
