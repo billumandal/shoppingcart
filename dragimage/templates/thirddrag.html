@@ -1,0 +1,68 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Upload a file in Django using Dropjone.js</title>
+    {% load staticfiles %}
+    <link href="{% static 'css/dropzone.css' %}" type="text/css" rel="stylesheet">
+    <script src="{% static 'js/dropzone.js' %}"></script>
+    <script>
+    $(document).ready(function(){
+        var list_of_files = new Array();
+        Dropzone.autoDiscover = false;
+        $("div#dropzone").dropzone({
+            uploadMultiple: true,
+            autoProcessQueue: false,
+            url: "/",
+            maxFiles: 5,
+            init: function(){
+                this.on("addedfile", function(file)
+                {
+                    if (list_of_files.length < 5)
+                    {
+                        list_of_files.push(file)
+                        console.log("file added");
+                    }
+                });
+            }
+        });
+        
+        $(document).on("click", "button", function(e){
+            e.preventDefault()
+            console.log('number of files: '+ list_of_files.length);
+            var formData = new FormData();
+            var inputs = $("#newUserForm input");
+
+            $.each(inputs, function(obj, v){
+                var name = $(v).attr("name")
+                var val = $(v).val();
+                console.log('name: '+name+' value: '+val);
+                formData.append(name, val);
+            });
+
+            for(i=0; i<list_of_files.length;i++)
+            {
+                formData.append('user_image'+(i+1), list_of_files[i]);
+            }
+
+            var request = new XMLHttpRequest();
+            request.open("POST", "/");
+            request.send(formData);
+        });
+    });
+    </script>
+</head>
+<body>
+    <form id-"newUserForm" name="newUserForm" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {% if form %}
+            {% for field in form %}
+                <p>{{ field.label_tag }} {{ field }}</p>
+            {% endfor %}
+        {% endif %}
+
+        <div id="dropzone" class="dropzone"></div>
+        <button id='save'> Save </button>
+    </form>
+</body>
+</html>

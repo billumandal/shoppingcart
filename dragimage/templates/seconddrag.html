@@ -1,0 +1,25 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Upload a file in Django using Dropjone.js</title>
+    {% load staticfiles %}
+    <link href="{% static 'css/dropzone.css' %}" type="text/css" rel="stylesheet">
+    <script src="{% static 'js/dropzone.js' %}"></script>
+</head>
+<body>
+    <form action="{% url 'upload_picture' %}" class='dropzone' drop-zone method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class='fallback'>
+            <h3>Your browser is not supported.</h3>
+            <strong>
+                <a href="https://browser-update.org/update.html" target="_blank">Click here for instructions on how to update it.</a>
+            </strong>
+            <p>You can still try to upload your pictures through this form:</p>
+            <p>
+                <input name="file" type="file" multiple />
+                <input type="submit" value="Upload" />
+            </p>
+        </div>
+    </form>
+</body>
+</html>
