@@ -32,13 +32,13 @@ def home(request):
             new_file = UploadFile(file = request.FILES['file'])
             new_file.save()
 
-            return HttpResponseRedirect(reverse('dragimage:home'))
+            return HttpResponseRedirect(reverse('./tempaltes/dragimagesuccess.html')) #('dragimage:home'))
 # http://stackoverflow.com/questions/30077990/trying-to-use-django-and-dropzone
     else:
         form = UploadFileForm()
 
     data = {'form': form}
-    return render_to_response('dragimageindex.html', data, context_instance=RequestContext(request))
+    return render_to_response('firstdrag.html', data, context_instance=RequestContext(request))
 
 def index(request):
     if request.method == 'POST':

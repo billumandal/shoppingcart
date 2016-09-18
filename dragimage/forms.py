@@ -18,4 +18,4 @@ class CustomerInfoForm(forms.ModelForm):
 class FourthTryForm(forms.ModelForm):
     class Meta:
         model = FourthTry
-        fields = '__all__'
+        fields = ('picture_name', 'picture')

@@ -80,8 +80,14 @@ WSGI_APPLICATION = 'shoppingcart.wsgi.application'
 
 DATABASES = {
     'default': {
+        # 'ENGINE': 'django.db.backends.postgresql_psycopg2', 
         'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': 'shoppingcart', 
         'NAME': os.path.join(BASE_DIR, 'cart.db'),
+        # 'USER': 'postgres',
+        # 'PASSWORD': 'postgres',
+        # 'HOST': '127.0.0.1',
+        # 'PORT': '5432',
     }
 }
 
@@ -125,9 +131,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/' 
+<<<<<<< HEAD
+MEDIA_URL = '/dragimage_album/'
+MEDIA_ROOT = '/Django/shoppingcart/media/' #I added it myself
+=======
 
 MEDIA_ROOT = '/product_pictures' #I added it myself
 MEDIA_URL= os.path.join(os.path.dirname(__file__), '/')
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> 2b28b9b58687fe6bdc9ec17b46c9e0837fedc8b4
+>>>>>>> Stashed changes
+=======
+>>>>>>> 2b28b9b58687fe6bdc9ec17b46c9e0837fedc8b4
+>>>>>>> Stashed changes
 
 STATICFILES_DIRS = (
         os.path.join(os.path.dirname(__file__), 'static'),

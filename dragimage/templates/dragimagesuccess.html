@@ -1,0 +1,45 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Image successfully uploaded using Dropjone.js</title>
+    {% load staticfiles %}
+    <link href="{% static 'css/dropzone.css' %}" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <h1>Image has been successfully uploaded</h1>
+    <br>
+    <p>Still wanna upload more, drop in the below form</p>
+    <hr>
+    <!--IMPORTANT enctype attribute! -->
+    <form class="dropzone" action="{% url 'dragimage:home' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+    </form>
+    <button id="submit-all">
+        Submit all files
+    </button>
+
+    <script src="{% static 'js/dropzone.js' %}"></script>
+    <script type="text/javascript">
+        Dropzone.options.myDropzone = {
+            //Prevents dropzone from uploading dropped files immediately
+            autoProcessQueue : false,
+
+            init : function() {
+                var submitButton = document.querySelector("#submit-all")
+                myDropzone = this;
+
+                submitButton.addEventListerner("click", function() {
+                    myDropzone.processQueue();
+                    // Tell dropzone to process all queued files.
+                });
+    
+                // You might want to show the submit button only when files are dropped here:
+                this.on("addedfile", function() {
+                    // Show submit button here and/or inform user to click it.
+                    document.getElementByID('#submit-all').style.background-color = 'red';
+                });
+            }
+        };
+    </script>
+</body>
+</html>

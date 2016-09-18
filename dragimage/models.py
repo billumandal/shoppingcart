@@ -34,4 +34,7 @@ class CustomerProfile(models.Model):
     user_image5 = models.ImageField(upload_to=get_upload_path, db_column='user_image5', max_length=100)
 
 class FourthTry(models.Model):
-    picture = models.ImageField(upload_to=get_upload_path)
+    picture_name = models.CharField(blank=True, max_length=50)
+    picture = models.ImageField(upload_to='photos/%Y/%m/%d')
+    picture_description = models.CharField(blank=True, max_length=300)
+    picture_tag = models.CharField(blank=True, max_length=50)
