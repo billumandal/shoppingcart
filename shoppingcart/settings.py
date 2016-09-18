@@ -127,20 +127,17 @@ USE_THOUSAND_SEPARATOR = True #I added it myself
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.9/howto/static-files/
-
-STATIC_URL = '/static/' 
 MEDIA_ROOT = '/product_pictures' #I added it myself
 MEDIA_URL= os.path.join(os.path.dirname(__file__), '/')
 
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+STATIC_URL = '/static/' 
 STATICFILES_DIRS = (
         os.path.join(os.path.dirname(__file__), 'static'),
     ) #I added it myself
 
-LOGIN_REDIRECT_URL = '/' #I added it myself
-
-LOGIN_URL ='django.contrib.auth.views.login' #I added it myself
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, '/emails')
@@ -149,4 +146,6 @@ EMAIL_PORT = 1030
 EMAIL_HOST_USER = None
 EMAIL_HOST_PASSWORD = None
 
+LOGIN_REDIRECT_URL = '/' #I added it myself
+LOGIN_URL ='django.contrib.auth.views.login' #I added it myself
 AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend', 'register_activate.email_auth.EmailBackend',] # (,) # the brackets came automatically
