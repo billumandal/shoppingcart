@@ -131,21 +131,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/' 
-<<<<<<< HEAD
-MEDIA_URL = '/dragimage_album/'
-MEDIA_ROOT = '/Django/shoppingcart/media/' #I added it myself
-=======
-
 MEDIA_ROOT = '/product_pictures' #I added it myself
 MEDIA_URL= os.path.join(os.path.dirname(__file__), '/')
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
->>>>>>> 2b28b9b58687fe6bdc9ec17b46c9e0837fedc8b4
->>>>>>> Stashed changes
-=======
->>>>>>> 2b28b9b58687fe6bdc9ec17b46c9e0837fedc8b4
->>>>>>> Stashed changes
 
 STATICFILES_DIRS = (
         os.path.join(os.path.dirname(__file__), 'static'),
