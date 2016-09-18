@@ -51,6 +51,7 @@ class ListProductView(ListView):
 # 		return HttpResponseRedirect('/productlist/')
 
 def AddProductView(request):
+	template_name = 'add_product.html'
 	if request.method == 'POST':
 		form = ProductForm(request.POST)
 		if form.is_valid():
