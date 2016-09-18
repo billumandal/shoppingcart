@@ -29,7 +29,7 @@
 {% block body %}
 	<h1>Add Product</h1>
 	{% block content %}
-	<form action="" method="post">
+	<div style="align:center; margin:auto; text-align:center"><form action="" method="post">
 		{% csrf_token %}
 		{% for field in form %}
 			<div class="fieldwrapper">
@@ -46,6 +46,6 @@
 		{% endfor %}
 		{{ form.non_field_errors }}
 		<input type="submit" value="Add Product">
-	</form>
+	</form></div>
 	{% endblock %}
 {% endblock %}
