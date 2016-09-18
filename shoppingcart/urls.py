@@ -29,7 +29,7 @@ urlpatterns = [
     url(r'^productlist/$', ListProductView.as_view(), name='productlist'),
     url(r'^transactionlist/$', ListTransactionView.as_view(), name='transactionlist'),
     url(r'^usertest/$', TemplateView.as_view(template_name='./registration/usertest.html' ), name='usertest'),
-    url(r'^cart/$', include('cart.urls', namespace='cart', app_name='cart')),
+    url(r'^cart/', include('cart.urls', namespace='cart', app_name='cart')),
     url(r'^register_activate/', include('register_activate.urls', namespace='registration', app_name='register_activate')),
     url(r'^dragimage/', include('dragimage.urls', namespace='dragimage', app_name='dragimage')),
     
