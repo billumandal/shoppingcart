@@ -20,7 +20,7 @@ class UserProfileAdmin(admin.ModelAdmin):
 		TransactionInline,
 		]
 
-class ProductAdmin(admin.ModelAdmin):
+class ProductAdmin(admin.ModelAdmin): #have to make a form and template for this one
 	list_display = ('product_name', 'price')
 	fields = ('product_name', 'sellerid', 'price', 'selling_starts_on', 'image') 
 	list_filter = ('selling_starts_on',)

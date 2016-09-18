@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-# from cart import views
 from cart.views import home, ListProductView, ListTransactionView
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib.auth import urls, views
@@ -30,7 +29,8 @@ urlpatterns = [
     url(r'^productlist/$', ListProductView.as_view(), name='productlist'),
     url(r'^transactionlist/$', ListTransactionView.as_view(), name='transactionlist'),
     url(r'^usertest/$', TemplateView.as_view(template_name='./registration/usertest.html' ), name='usertest'),
-    url(r'^register_activate/', include('register_activate.urls')),
+    url(r'^cart/$', include('cart.urls', namespace='cart', app_name='cart')),
+    url(r'^register_activate/', include('register_activate.urls', namespace='registration', app_name='register_activate')),
     url(r'^dragimage/', include('dragimage.urls', namespace='dragimage', app_name='dragimage')),
     
 ]
