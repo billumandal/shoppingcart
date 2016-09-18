@@ -126,10 +126,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/' 
 
-MEDIA_ROOT = '/' #I added it myself
+MEDIA_ROOT = '/product_pictures' #I added it myself
+MEDIA_URL= os.path.join(os.path.dirname(__file__), '/')
 
 STATICFILES_DIRS = (
-        os.path.join( os.path.dirname(__file__), 'static'),
+        os.path.join(os.path.dirname(__file__), 'static'),
     ) #I added it myself
 
 LOGIN_REDIRECT_URL = '/' #I added it myself
