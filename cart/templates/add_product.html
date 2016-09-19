@@ -33,15 +33,21 @@
 	<form action="" method="post">
 		{% csrf_token %}
 		{% for field in form %}
+			{{ form.non_field_errors }}
 			<div class="fieldwrapper">
+				{{ form.product_name.errors }}
+				<label for="{{ form.product_name.id_for_label }}">Product Name:</label>
+				{{ form.product_name }}
+			</div>
+			{# <div class="fieldwrapper">
 				{{ field.errors }}
-				{# Have to add the dropzone field here #}
+				Have to add the dropzone field here
 				<label>
 					{{ field.label_tag }} 
 				</label> 
 				<div>
 					{{ field }}
-				</div>
+				</div> #}
 			</div>
 		{% endfor %}
 			<hr>
