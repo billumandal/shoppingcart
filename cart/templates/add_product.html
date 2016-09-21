@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
-<script src="{% static 'js/jquery-2.2.3.js' %}"></script>
+<script src="{% static 'js/jquery-2.1.3.js' %}"></script>
 <script src="{% static 'jquery-1.10.2.js' %}"></script>
 <script src="{% static 'jquery-ui.js' %}"></script>
 {% endblock %}
@@ -25,6 +25,11 @@
 		$('#id_selling_starts_on').datepicker();
 		$('#id_selling_ends_on').datepicker();
 	});
+	$document.ready(function(){
+		$(".getdate").each(function() {
+			$(this).datepicker();
+		});
+	});
 {% endblock %}
 {% block body %}
 	<h1>Add Product</h1>
@@ -36,6 +41,11 @@
 			{{ form.product_name.errors }}
 			<label for="{{ form.product_name.id_for_label }}">Product Name:</label>
 			{{ form.product_name }}
+		</div>
+		<div class="fieldwrapper">
+			{{ form.sellerid.errors }}
+			<label for="{{ form.sellerid.id_for_label }}">Seller id:</label>
+			{{ form.sellerid }}
 		</div>
 		<div class="fieldwrapper">
 			{{ form.price.errors }}

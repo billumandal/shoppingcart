@@ -8,7 +8,8 @@ class ProductForm(forms.ModelForm):
 
 	class Meta:
 		model = Product
-		exclude = ('sellerid',)
+        # fields = '__all__'
+		exclude = ()
 
 	# productname = forms.CharField(label="Name of the Product", max_length=255, widget=forms.TextInput,)
 	# price = forms.IntegerField(label="Price of the item: Rs. ")
