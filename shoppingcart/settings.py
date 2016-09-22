@@ -128,7 +128,8 @@ USE_TZ = True
 
 
 MEDIA_ROOT = '/product_pictures' #I added it myself
-MEDIA_URL= os.path.join(os.path.dirname(__file__), '/')
+# MEDIA_URL= os.path.join(os.path.dirname(__file__), '/')
+MEDIA_URL= os.path.join(BASE_DIR, '/')
 
 
 # Static files (CSS, JavaScript, Images)
@@ -136,7 +137,9 @@ MEDIA_URL= os.path.join(os.path.dirname(__file__), '/')
 STATIC_URL = '/static/' 
 STATICFILES_DIRS = (
         os.path.join(os.path.dirname(__file__), 'static'),
+        os.path.join(BASE_DIR, 'static'),
     ) #I added it myself
+
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

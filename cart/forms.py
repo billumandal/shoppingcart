@@ -8,8 +8,10 @@ class ProductForm(forms.ModelForm):
 
 	class Meta:
 		model = Product
-        # fields = '__all__'
 		exclude = ()
+
+    selling_starts_on = forms.DateField(widget=forms.TextInput(attrs={'class':'datepicker'}))
+    selling_ends_on = forms.DateField(widget=forms.TextInput(attrs={'class':'datepicker'}))
 
 	# productname = forms.CharField(label="Name of the Product", max_length=255, widget=forms.TextInput,)
 	# price = forms.IntegerField(label="Price of the item: Rs. ")
