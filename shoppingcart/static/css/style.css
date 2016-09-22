@@ -17,3 +17,6 @@ ul.errorlist{
     text-align:justify-all;
     display: inline-block;
 }
+input[type=file] {
+    margin:0 auto;
+}
