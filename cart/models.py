@@ -32,10 +32,10 @@ class Product(models.Model):
 	product_name = models.CharField(max_length=100)
 	sellerid = models.ManyToManyField(User)
 	price = models.IntegerField()
-	image = models.ImageField(upload_to='product_pictures/%Y/%m/%d', blank=True)
 	selling_starts_on = models.DateField(null=True)
 	selling_ends_on = models.DateField(null=True)
 	despatched_from = models.CharField(max_length=50)
+	image = models.ImageField(upload_to='product_pictures/%Y/%m/%d', blank=True)
 
 	def __unicode__(self):
 		# return self.id

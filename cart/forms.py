@@ -8,6 +8,7 @@ class ProductForm(forms.ModelForm):
 
     selling_starts_on = forms.DateField(widget=forms.DateInput(attrs={'class':'datepicker'}))
     selling_ends_on = forms.DateField(widget=forms.DateInput(attrs={'class':'datepicker'}))
+    image = forms.ImageField(widget=forms.FileInput(attrs={'class':'dropzone'}))
 
     class Meta:
         model = Product
