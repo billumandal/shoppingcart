@@ -8,12 +8,11 @@ class ProductForm(forms.ModelForm):
 
     selling_starts_on = forms.DateField(widget=forms.DateInput(attrs={'class':'datepicker'}))
     selling_ends_on = forms.DateField(widget=forms.DateInput(attrs={'class':'datepicker'}))
-    image = forms.ImageField(widget=forms.FileInput(attrs={'class':'dropzone'}))
+    image = forms.ImageField(widget=forms.FileInput(attrs={'class':'dropzone'}), label="Optionally add an Image of the Product")
 
     class Meta:
         model = Product
         exclude = ()
-
 
 	# productname = forms.CharField(label="Name of the Product", max_length=255, widget=forms.TextInput,)
 	# price = forms.IntegerField(label="Price of the item: Rs. ")
