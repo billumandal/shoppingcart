@@ -59,7 +59,11 @@ register_activate_dir=os.path.dirname(os.path.abspath('register_activate.__file_
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(register_activate_dir,'register_activate/templates/register_activate')],
+        'DIRS': [
+                os.path.join(register_activate_dir,'register_activate/templates/register_activate'),
+                './cart/templates/',
+                './dragimage/templates/'
+            ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
